@@ -76,7 +76,7 @@ async fn main() -> Result<()> {
             let assets = engine.enumerate(&config, scan_id).await?;
             let json = serde_json::to_string_pretty(&assets)?;
             if let Some(path) = output {
-                std::fs::write(path, &json)?;
+                std::fs::write(&path, &json)?;
             } else {
                 println!("{}", json);
             }
