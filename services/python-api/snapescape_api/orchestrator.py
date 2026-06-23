@@ -1,8 +1,8 @@
 """Real scan orchestration — no mocks."""
 
-import os
 from __future__ import annotations
 
+import os
 import asyncio
 import json
 import logging
