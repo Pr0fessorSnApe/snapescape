@@ -11,7 +11,7 @@ use std::time::Duration;
 use tokio::io::{AsyncReadExt, AsyncWriteExt};
 use tokio::net::TcpStream;
 use tokio::time::timeout;
-use tracing::{debug, info};
+use tracing::info;
 use uuid::Uuid;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -192,7 +192,7 @@ impl PortScanner {
                 }
             })
             .buffer_unordered(concurrency)
-            .filter_map(|x| async { x })
+            .filter_map(|x| async move { x })
             .collect()
             .await;
 
@@ -231,7 +231,7 @@ impl PortScanner {
             TcpStream::connect(socket),
         )
         .await
-        .ok()??;
+        .ok()?;
 
         let mut buf = vec![0u8; 1024];
         let _ = stream.write_all(b"\r\n").await;
