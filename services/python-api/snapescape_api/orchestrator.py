@@ -36,10 +36,10 @@ class ScanStatus(str, Enum):
 
 class ScanOrchestrator:
     def __init__(self, redis_url: str | None = None):
-    self.redis_url = redis_url or os.getenv(
-        "REDIS_URL",
-        "redis://redis:6379/0"
-    )
+        self.redis_url = redis_url or os.getenv(
+            "REDIS_URL",
+            "redis://redis:6379/0"
+        )
         self._redis: aioredis.Redis | None = None
         self._scans: dict[str, dict[str, Any]] = {}
         self._scan_tasks: dict[str, asyncio.Task] = {}
