@@ -231,7 +231,7 @@ impl PortScanner {
             TcpStream::connect(socket),
         )
         .await
-        .ok()?;
+        .ok()?.ok()?;
 
         let mut buf = vec![0u8; 1024];
         let _ = stream.write_all(b"\r\n").await;
