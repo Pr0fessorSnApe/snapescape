@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: '1.22'
-      - run: cd services/go-worker && go build ./...
+      - run: cd services/go-worker && go mod tidy && go build ./...
 
   python:
     runs-on: ubuntu-latest
