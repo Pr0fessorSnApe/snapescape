@@ -1,0 +1,15 @@
+FROM rust:1.75-bookworm AS rust-builder
+WORKDIR /build
+COPY engines/rust/ .
+RUN cargo build --release
+
+FROM golang:1.22-bookworm AS go-builder
+WORKDIR /build
+COPY services/go-worker/ .
+RUN go build -o snapescape-worker ./cmd/worker
+
+FROM debian:bookworm-slim
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
+COPY --from=rust-builder /build/target/release/snapescape /usr/local/bin/snapescape
+COPY --from=go-builder /build/snapescape-worker /usr/local/bin/snapescape-worker
+CMD ["snapescape-worker"]

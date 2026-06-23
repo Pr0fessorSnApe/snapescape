@@ -1,0 +1,16 @@
+[package]
+name = "snapescape-scanner"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+snapescape-core = { path = "../snapescape-core" }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }
+reqwest = { workspace = true }
+futures = { workspace = true }
+uuid = { workspace = true }
+chrono = { workspace = true }

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "providers": {
+    "shodan": {
+      "api_key": "",
+      "enabled": false
+    },
+    "virustotal": {
+      "api_key": "",
+      "enabled": false
+    },
+    "censys": {
+      "api_id": "",
+      "api_secret": "",
+      "enabled": false
+    },
+    "openai": {
+      "api_key": "",
+      "enabled": false,
+      "model": "gpt-4"
+    }
+  },
+  "_comment": "Copy to vault.json and set SNAPESCAPE_VAULT_KEY env var. Keys are encrypted at rest."
+}

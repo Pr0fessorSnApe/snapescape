@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"><animate attributeName="stop-color" values="#00f0ff;#7b2fff;#ff0055;#00f0ff" dur="4s" repeatCount="indefinite"/></stop>
+      <stop offset="100%" stop-color="#ff0055"><animate attributeName="stop-color" values="#ff0055;#00f0ff;#7b2fff;#ff0055" dur="4s" repeatCount="indefinite"/></stop>
+    </linearGradient>
+    <filter id="gl"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <polygon points="256,30 470,140 470,360 256,470 42,360 42,140" fill="#0a0a12" stroke="url(#g)" stroke-width="5" filter="url(#gl)">
+    <animate attributeName="stroke-width" values="5;8;5" dur="2s" repeatCount="indefinite"/>
+  </polygon>
+  <text x="256" y="290" text-anchor="middle" font-family="monospace" font-size="36" font-weight="bold" fill="url(#g)">SS</text>
+  <text x="256" y="420" text-anchor="middle" font-family="monospace" font-size="22" fill="url(#g)">SNAPESCAPE</text>
+</svg>

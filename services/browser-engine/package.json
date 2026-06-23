@@ -1,0 +1,10 @@
+{
+  "name": "snapescape-browser-engine",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "^4.21.2",
+    "playwright": "^1.49.1",
+    "uuid": "^11.0.3"
+  }
+}

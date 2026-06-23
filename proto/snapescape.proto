@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package snapescape;
+
+option go_package = "snapescape/proto";
+
+service ScanService {
+  rpc RunScan(ScanRequest) returns (stream ScanEvent);
+  rpc ProbeHost(ProbeRequest) returns (ProbeResponse);
+  rpc ValidateFinding(FindingRequest) returns (FindingResponse);
+}
+
+message ScanRequest {
+  string scan_id = 1;
+  string target = 2;
+  repeated string phases = 3;
+}
+
+message ScanEvent {
+  string scan_id = 1;
+  string phase = 2;
+  string event_type = 3;
+  double progress = 4;
+  string payload_json = 5;
+}
+
+message ProbeRequest {
+  string url = 1;
+  int32 timeout_ms = 2;
+}
+
+message ProbeResponse {
+  int32 status = 1;
+  string title = 2;
+  repeated string technologies = 3;
+  string headers_json = 4;
+}
+
+message FindingRequest {
+  string finding_json = 1;
+}
+
+message FindingResponse {
+  bool validated = 1;
+  double confidence = 2;
+  repeated string stages = 3;
+}
