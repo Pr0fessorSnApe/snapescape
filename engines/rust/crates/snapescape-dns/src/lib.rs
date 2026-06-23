@@ -44,7 +44,7 @@ impl Default for DnsEnumConfig {
     }
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
 pub struct SubdomainResult {
     pub subdomain: String,
     pub source: String,
