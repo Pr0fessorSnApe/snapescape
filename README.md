@@ -2,10 +2,6 @@
   <img src="branding/banner.png" alt="SnapeScape — The World's Attack Surface Intelligence Platform" width="100%"/>
 </p>
 
-<p align="center">
-  <img src="branding/logo.png" alt="SnapeScape Logo" width="280"/>
-</p>
-
 <h1 align="center">SnapeScape</h1>
 <p align="center"><strong>THE WORLD'S ATTACK SURFACE INTELLIGENCE PLATFORM</strong></p>
 <p align="center">Created By: Pr0Fessor_SnApe</p>
