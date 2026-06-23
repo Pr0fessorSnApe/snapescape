@@ -159,7 +159,7 @@ async fn main() -> Result<()> {
             });
             let json = serde_json::to_string_pretty(&report)?;
             if let Some(path) = output {
-                std::fs::write(path, &json)?;
+                std::fs::write(&path, &json)?;
                 eprintln!("[+] Report saved to {:?}", path);
             } else {
                 println!("{}", json);
